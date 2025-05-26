@@ -10,7 +10,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddSingleton<IDataAccess, DemoDataAccess>();
 
-builder.Services.AddMediatR(typeof(DemoDataAccess).Assembly);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(DemoDataAccess).Assembly));
 
 var app = builder.Build();
 

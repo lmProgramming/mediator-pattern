@@ -18,6 +18,11 @@ namespace MediatorPattern.DataAccess
             return people;
         }
 
+        public PersonModel? GetPersonById(int id)
+        {
+            return people.FirstOrDefault(p => p.Id == id);
+        }
+
         public PersonModel InsertPerson(string firstName, string lastName)
         {
             var person = new PersonModel { Id = people.Max(p => p.Id) + 1, FirstName = firstName, LastName = lastName };
