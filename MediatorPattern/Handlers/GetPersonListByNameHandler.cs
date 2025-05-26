@@ -17,7 +17,7 @@ namespace MediatorPattern.Handlers
         {
             var people = await _mediator.Send(new GetPersonListQuery());
 
-            return people.Where(p => p.FirstName == request.firstName).ToList();
+            return people.Where(p => p.FirstName == request.FirstName).ToList();
         }
     }
 }

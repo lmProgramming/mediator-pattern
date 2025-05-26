@@ -5,7 +5,7 @@ using MediatR;
 
 namespace MediatorPattern.Handlers
 {
-    public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, PersonModel>
+    public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, PersonModel?>
     {
         private readonly IDataAccess _data;
 
@@ -14,7 +14,7 @@ namespace MediatorPattern.Handlers
             _data = data;
         }
 
-        public Task<PersonModel> Handle(GetPersonByIdQuery request, CancellationToken cancellationToken)
+        public Task<PersonModel?> Handle(GetPersonByIdQuery request, CancellationToken cancellationToken)
         {
             return Task.FromResult(_data.GetPersonById(request.id));
         }

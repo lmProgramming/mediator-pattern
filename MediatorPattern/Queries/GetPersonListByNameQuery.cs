@@ -3,5 +3,5 @@ using MediatR;
 
 namespace MediatorPattern.Queries
 {
-    public record GetPersonListByNameQuery(string firstName) : IRequest<List<PersonModel>>;
+    public record GetPersonListByNameQuery(string FirstName) : IRequest<List<PersonModel>>;
 }
