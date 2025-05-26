@@ -1,11 +1,10 @@
 ﻿using MediatorPattern.Models;
 
-namespace MediatorPattern.DataAccess
+namespace MediatorPattern.DataAccess;
+
+public interface IDataAccess
 {
-    public interface IDataAccess
-    {
-        List<PersonModel> GetPeople();
-        PersonModel? GetPersonById(int id);
-        PersonModel InsertPerson(string firstName, string lastName);
-    }
+    List<PersonModel> GetPeople();
+    PersonModel? GetPersonById(int id);
+    PersonModel InsertPerson(string firstName, string lastName);
 }
